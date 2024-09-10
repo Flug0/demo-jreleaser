@@ -32,7 +32,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Run jReleaser Full Release
-        run: ./gradlew jreleaserFullRelease
+        run: ./gradlew jreleaserFullRelease --stacktrace
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.TOKEN }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
