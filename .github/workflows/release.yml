@@ -30,9 +30,10 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/gradle-wrapper.properties') }}-8.2
           restore-keys: |
-            ${{ runner.os }}-gradle
+            gradle-${{ runner.os }}-
+
 
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
