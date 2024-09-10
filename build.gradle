@@ -73,7 +73,7 @@ project(":core") {
 jreleaser {
     project {
         name = 'DEMO-JRELEASER'
-        version = '1.0.14'
+        version = '1.0.15'
         description = 'A demo to showcase JReleaser'
         authors = ['Hugo', 'Oscar']
         license = 'MIT'
