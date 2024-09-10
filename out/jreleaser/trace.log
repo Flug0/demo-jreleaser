@@ -1,0 +1,534 @@
+[INFO]  JReleaser 1.14.0
+------------------------------------------------------------
+jreleaser 1.14.0
+------------------------------------------------------------
+Build time:   2024-08-31 06:25:38Z
+Revision:     4a8bb20f77d2aced0e1865698c484c2a6cf25e7b
+JVM:          22.0.2 (Homebrew 22.0.2)
+------------------------------------------------------------
+[INFO]  Configuring with jreleaser.yml
+[INFO]    - basedir set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser
+[INFO]    - outputdir set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser
+[INFO]  Reading configuration
+[DEBUG]   - basedir set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser
+[DEBUG]   - baseOutputDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out
+[DEBUG]   - outputDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser
+[DEBUG]   - checksumDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/checksums
+[DEBUG]   - catalogsDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/catalogs
+[DEBUG]   - signaturesDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/signatures
+[DEBUG]   - prepareDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/prepare
+[DEBUG]   - packageDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/package
+[DEBUG]   - downloadDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/download
+[DEBUG]   - assembleDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/assemble
+[DEBUG]   - artifactsDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/artifacts
+[DEBUG]   - deployDirectory set to /Users/oscarhellgren/KTH/DD2482-DEVOPS/new/demo-jreleaser/out/jreleaser/deploy
+[INFO]  git-root-search set to false
+[INFO]  Loading variables from /Users/oscarhellgren/.jreleaser/config.properties
+[WARN]  Variables source /Users/oscarhellgren/.jreleaser/config.properties does not exist
+[INFO]  Validating configuration
+[INFO]  Strict mode set to false
+[DEBUG]   [validation] --== ANNOUNCE ==--
+[DEBUG]   [validation] hooks
+[DEBUG]   [validation] hooks.command
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] hooks.script
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] project
+[DEBUG]   [validation] download
+[DEBUG]   [validation] catalog.swid
+[DEBUG]   [validation] assemble
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] signing
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] release
+[DEBUG]   [validation] release.github
+[DEBUG]   [validation] checksum
+[DEBUG]   [validation] deploy
+[DEBUG]   [validation] deploy.maven
+[DEBUG]   [validation] upload
+[DEBUG]   [validation] catalog
+[DEBUG]   [validation] catalog.sbom
+[DEBUG]   [validation] catalog.sbom.cyclonedx
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] catalog.sbom.syft
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] catalog.github
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] catalog.slsa
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce
+[DEBUG]   [validation] announce.article
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.bluesky
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.discussions
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.discord
+[DEBUG]   [validation] announce.discourse
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.gitter
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.googleChat
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.linkedin
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.http
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.smtp
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.mastodon
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.mattermost
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.openCollective
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.sdkman
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.slack
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.teams
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.telegram
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.twitter
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.webhooks
+[DEBUG]   [validation] - disabled
+[DEBUG]   [validation] announce.zulip
+[DEBUG]   [validation] - disabled
+[DEBUG]   [postvalidation] project
+[ERROR] == JReleaser ==
+[ERROR] project.version must not be blank. Configure a value using the CLI yaml DSL, or define a System property jreleaser.project.version, or define a JRELEASER_PROJECT_VERSION environment variable, or define a key/value pair in /Users/oscarhellgren/.jreleaser/config.properties with a key named JRELEASER_PROJECT_VERSION
+[ERROR] release.github.token must not be blank. Configure a value using the CLI yaml DSL, or define a System property jreleaser.github.token, or define a JRELEASER_GITHUB_TOKEN environment variable, or define a key/value pair in /Users/oscarhellgren/.jreleaser/config.properties with a key named JRELEASER_GITHUB_TOKEN
+[ERROR] project.description must not be blank
+[ERROR] project.copyright must not be blank
+[ERROR] project.website must not be blank
+[ERROR] project.docsUrl must not be blank
+[ERROR] project.license must not be blank
+[ERROR] project.authors must not be blank
+environment:
+ 
+hooks:
+    enabled: false
+    active: NEVER
+    command:
+        enabled: false
+        active: NEVER
+    script:
+        enabled: false
+        active: NEVER
+ 
+project:
+    name: demo-jreleaser
+    versionPattern: SEMVER
+    snapshot:
+        enabled: false
+        pattern: .*-SNAPSHOT
+        label: early-access
+        fullChangelog: false
+    stereotype: NONE
+    links:
+        bugTracker: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/issues
+        vcsBrowser: https://{{repoHost}}/{{repoOwner}}/{{repoName}}
+ 
+platform:
+ 
+release:
+    github:
+        enabled: true
+        host: github.com
+        owner: Flug0
+        name: demo-jreleaser
+        username: Flug0
+        token: **unset**
+        artifacts: true
+        files: true
+        checksums: true
+        catalogs: true
+        signatures: true
+        repoUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}
+        repoCloneUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}.git
+        commitUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/commits
+        srcUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/blob/{{repoBranch}}
+        downloadUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/releases/download/{{tagName}}/{{artifactFile}}
+        releaseNotesUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/releases/tag/{{tagName}}
+        latestReleaseUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/releases/latest
+        issueTrackerUrl: https://{{repoHost}}/{{repoOwner}}/{{repoName}}/issues
+        tagName: v{{projectVersion}}
+        releaseName: Release {{tagName}}
+        branch: main
+        branchPush: main
+        commitAuthor:
+            name: jreleaserbot
+            email: jreleaser@kordamp.org
+        sign: false
+        skipTag: false
+        skipRelease: false
+        overwrite: false
+        update:
+            enabled: false
+        apiEndpoint: https://api.github.com
+        connectTimeout: 20
+        readTimeout: 60
+        changelog:
+            enabled: true
+            append:
+                enabled: false
+            links: false
+            skipMergeCommits: false
+            formatted: NEVER
+            hide:
+            contributors:
+        milestone:
+            name: {{tagName}}
+            close: true
+        issues:
+            enabled: false
+            comment: 🎉 This issue has been resolved in `{{tagName}}` ([Release Notes]({{releaseNotesUrl}}))
+            label:
+                name: released
+                color: #FF0000
+                description: Issue has been released
+        prerelease:
+            enabled: false
+        draft: false
+        releaseNotes:
+            enabled: false
+ 
+checksum:
+    name: checksums.txt
+    individual: false
+    algorithms:
+        SHA_256
+    artifacts: true
+    files: true
+ 
+signing:
+    enabled: false
+    active: NEVER
+    armored: false
+    verify: true
+    artifacts: true
+    files: true
+    checksums: true
+    catalogs: true
+    passphrase: **unset**
+    publicKey: **unset**
+    secretKey: **unset**
+ 
+announce:
+    enabled: true
+    active: ALWAYS
+    article:
+        enabled: false
+        active: NEVER
+        commitAuthor:
+        repository:
+            enabled: false
+            name: article
+            token: **unset**
+    bluesky:
+        enabled: false
+        active: NEVER
+        handle: **unset**
+        password: **unset**
+    discord:
+        enabled: true
+        active: ALWAYS
+        connectTimeout: 20
+        readTimeout: 60
+        webhook: ************
+        message: @ikea2627 NEW CHANGES
+    discourse:
+        enabled: false
+        active: NEVER
+        apiKey: **unset**
+        username: **unset**
+    discussions:
+        enabled: false
+        active: NEVER
+    gitter:
+        enabled: false
+        active: NEVER
+        webhook: **unset**
+    googlechat:
+        enabled: false
+        active: NEVER
+        webhook: **unset**
+    linkedin:
+        enabled: false
+        active: NEVER
+        owner: **unset**
+        accessToken: **unset**
+    smtp:
+        enabled: false
+        active: NEVER
+        auth: false
+        password: **unset**
+    mastodon:
+        enabled: false
+        active: NEVER
+        accessToken: **unset**
+    mattermost:
+        enabled: false
+        active: NEVER
+        webhook: **unset**
+        structuredMessage: true
+    opencollective:
+        enabled: false
+        active: NEVER
+        token: **unset**
+    sdkman:
+        enabled: false
+        consumerKey: **unset**
+        consumerToken: **unset**
+    slack:
+        enabled: false
+        active: NEVER
+        webhook: **unset**
+        token: **unset**
+    teams:
+        enabled: false
+        active: NEVER
+        webhook: **unset**
+    telegram:
+        enabled: false
+        active: NEVER
+        token: **unset**
+        chatId: **unset**
+    twitter:
+        enabled: false
+        active: NEVER
+        consumerKey: **unset**
+        consumerSecret: **unset**
+        accessToken: **unset**
+        accessTokenSecret: **unset**
+    zulip:
+        enabled: false
+        active: NEVER
+        apiKey: **unset**
+ 
+packagers:
+    appimage:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        requiresTerminal: false
+        repository:
+            enabled: false
+            name: appimage
+            token: **unset**
+    asdf:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: asdf
+            token: **unset**
+    brew:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        multiPlatform: false
+        repository:
+            enabled: false
+            name: homebrew-tap
+            token: **unset**
+        cask:
+            enabled: false
+    chocolatey:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        apiKey: **unset**
+        remoteBuild: false
+        repository:
+            enabled: false
+            name: chocolatey-bucket
+            token: **unset**
+    docker:
+        enabled: false
+        useLocalArtifact: true
+        buildx:
+            enabled: false
+            createBuilder: true
+        commitAuthor:
+        repository:
+            enabled: false
+            name: docker
+            token: **unset**
+            versionedSubfolders: false
+        continueOnError: false
+    flatpak:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: flatpak
+            token: **unset**
+    gofish:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: fish-food
+            token: **unset**
+    jbang:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: jbang-catalog
+            token: **unset**
+    jib:
+        enabled: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: jib
+            token: **unset**
+            versionedSubfolders: false
+        continueOnError: false
+    macports:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: macports
+            token: **unset**
+    scoop:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: scoop
+            token: **unset**
+    sdkman:
+        enabled: false
+        continueOnError: false
+        connectTimeout: 0
+        readTimeout: 0
+        consumerKey: **unset**
+        consumerToken: **unset**
+    snap:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        remoteBuild: false
+        repository:
+            enabled: false
+            name: snap
+            token: **unset**
+    spec:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        repository:
+            enabled: false
+            name: spec
+            token: **unset**
+    winget:
+        enabled: false
+        continueOnError: false
+        commitAuthor:
+        package:
+        publisher:
+        installer:
+            type: WIX
+            scope: MACHINE
+            upgradeBehavior: INSTALL
+            dependencies:
+        repository:
+            enabled: false
+            name: winget
+            token: **unset**
+ 
+download:
+    enabled: true
+ 
+assemble:
+    enabled: true
+ 
+deploy:
+    enabled: true
+    maven:
+        enabled: true
+        pomchecker:
+            version: 1.12.0
+            failOnWarning: true
+            failOnError: true
+ 
+upload:
+    enabled: true
+ 
+catalog:
+    enabled: true
+    github:
+        enabled: false
+        active: NEVER
+        artifacts: true
+        files: true
+        deployables: true
+    sbom:
+        enabled: true
+        cyclonedx:
+            enabled: false
+            active: NEVER
+            distributions: false
+            files: false
+            pack:
+                enabled: false
+        syft:
+            enabled: false
+            active: NEVER
+            distributions: false
+            files: false
+            pack:
+                enabled: false
+    slsa:
+        enabled: false
+        active: NEVER
+        artifacts: true
+        files: true
+        deployables: true
+    swid:
+        enabled: false
+        name: swid-tag
+        corpus: false
+        patch: false
+ 
+org.jreleaser.model.JReleaserException: JReleaser has not been properly configured.
+project.version must not be blank. Configure a value using the CLI yaml DSL, or define a System property jreleaser.project.version, or define a JRELEASER_PROJECT_VERSION environment variable, or define a key/value pair in /Users/oscarhellgren/.jreleaser/config.properties with a key named JRELEASER_PROJECT_VERSION
+release.github.token must not be blank. Configure a value using the CLI yaml DSL, or define a System property jreleaser.github.token, or define a JRELEASER_GITHUB_TOKEN environment variable, or define a key/value pair in /Users/oscarhellgren/.jreleaser/config.properties with a key named JRELEASER_GITHUB_TOKEN
+project.description must not be blank
+project.copyright must not be blank
+project.website must not be blank
+project.docsUrl must not be blank
+project.license must not be blank
+project.authors must not be blank
+
+	at org.jreleaser.engine.context.ModelValidator.validate(ModelValidator.java:65)
+	at org.jreleaser.workflow.WorkflowImpl.<init>(WorkflowImpl.java:47)
+	at org.jreleaser.workflow.Workflows.announce(Workflows.java:125)
+	at org.jreleaser.cli.Announce.doExecute(Announce.java:83)
+	at org.jreleaser.cli.AbstractModelCommand.execute(AbstractModelCommand.java:90)
+	at org.jreleaser.cli.AbstractCommand.call(AbstractCommand.java:52)
+	at org.jreleaser.cli.AbstractCommand.call(AbstractCommand.java:37)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at org.jreleaser.cli.Main.execute(Main.java:98)
+	at org.jreleaser.cli.Main.run(Main.java:81)
+	at org.jreleaser.cli.Main.main(Main.java:70)

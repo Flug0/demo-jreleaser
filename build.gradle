@@ -7,7 +7,7 @@ buildscript {
         google()
     }
     dependencies {
-
+        // Add other dependencies if needed
     }
 }
 
@@ -77,6 +77,9 @@ jreleaser {
         description = 'A demo to showcase JReleaser'
         authors = ['Hugo', 'Oscar']
         license = 'MIT'
+        website = 'https://github.com/Flug0/demo-jreleaser' // Add the project website URL
+        docsUrl = 'https://github.com/Flug0/demo-jreleaser/wiki' // Add the documentation URL
+        copyright = '2024 Flug0' // Add copyright information
     }
 
     release {
@@ -84,6 +87,14 @@ jreleaser {
             repoOwner = 'Flug0'
             name = 'demo-jreleaser'
             token = System.getenv('GITHUB_TOKEN') // Environment variable
+        }
+    }
+
+    announce {
+        discord {
+            active = 'ALWAYS' // Use one of the enum values like 'ALWAYS', 'RELEASE', etc.
+            webhook = 'https://discord.com/api/webhooks/1283147214113476722/Ll-3S-kr3X3-EXwrri3j8YSNSzEW_ieK0c_baMO-0OWk2bAGzVU6zTgpMXM5YtzbozzV'
+            message = '@ikea2627 NEW CHANGES'
         }
     }
 }

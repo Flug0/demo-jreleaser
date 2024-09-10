@@ -15,6 +15,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Random;
 
 import static com.badlogic.gdx.graphics.Texture.TextureWrap.Repeat;
@@ -95,6 +96,9 @@ public class MyGdxGame extends ApplicationAdapter {
     Animation<TextureRegion> currentSteveAnimationState;
     Animation<TextureRegion> runAnimation;
     Animation<TextureRegion> fallAnimation;
+    Animation<TextureRegion> chara;
+    private String character = "normal"; //belle
+    private String background = "normal"; //pink
 
     private ArrayList<Integer> highscores;
 
@@ -119,9 +123,12 @@ public class MyGdxGame extends ApplicationAdapter {
         }
         fireball = new Fireball(WIDTH, 0);
         batch = new SpriteBatch();
-        steveImage = new Texture("belle.png");
-        bgImage = new Texture("background.jpg");
-        //bgImage = new Texture("pink.jpg");
+        if (Objects.equals(background, "pink")) {
+            bgImage = new Texture("pink.jpg");
+        } else {
+            bgImage = new Texture("background.jpg");
+        }
+        //steveImage = new Texture("belle.png");
         bgImage.setWrap(Repeat, Repeat);
         camera = new OrthographicCamera();
         camera.setToOrtho(false, WIDTH, HEIGHT);
@@ -143,6 +150,8 @@ public class MyGdxGame extends ApplicationAdapter {
         runAnimation = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal("run.gif").read());
         fallAnimation = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal("fall.gif").read());
         warningAnimation = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal("warning.gif").read());
+        chara = GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP, Gdx.files.internal("eating.gif").read());
+
 
         currentSteveAnimationState = runAnimation;
         jump = new Texture("jump.png");
@@ -283,15 +292,19 @@ public class MyGdxGame extends ApplicationAdapter {
             handleFireball();
         }
 
-       // batch.draw(steveImage, steve.x, steve.y, steve.width, steve.height);
-
-        if (steve.y > FLOOR_Y && steve_y_speed >= 0) {
-            // Steve moving upwards
-            batch.draw(jump, steve.x, steve.y, steve.width, steve.height);
+        //batch.draw(steveImage, steve.x, steve.y, steve.width, steve.height);
+        if (Objects.equals(character, "belle")) {
+            batch.draw(chara.getKeyFrame(elapsedTime), steve.x, steve.y, steve.width, steve.height);
         } else {
-            // Steve is either running or falling
-            batch.draw(currentSteveAnimationState.getKeyFrame(elapsedTime), steve.x, steve.y, steve.width, steve.height);
+            if (steve.y > FLOOR_Y && steve_y_speed >= 0) {
+                // Steve moving upwards
+                batch.draw(jump, steve.x, steve.y, steve.width, steve.height);
+            } else {
+                // Steve is either running or falling
+                batch.draw(currentSteveAnimationState.getKeyFrame(elapsedTime), steve.x, steve.y, steve.width, steve.height);
+            }
         }
+
 
         font.draw(batch, Integer.toString(survivedFrames / 60), WIDTH - 70, HEIGHT - 20);
         batch.end(); // Frame finished
