@@ -73,7 +73,7 @@ project(":core") {
 jreleaser {
     project {
         name = 'DEMO-JRELEASER'
-        version = '1.0.18'
+        version = '1.0.33'
         description = 'A demo to showcase JReleaser'
         authors = ['Hugo', 'Oscar']
         license = 'MIT'
@@ -87,6 +87,7 @@ jreleaser {
             repoOwner = 'Flug0'
             name = 'demo-jreleaser'
             token = System.getenv('GITHUB_TOKEN') // Environment variable
+            overwrite = true
         }
     }
 

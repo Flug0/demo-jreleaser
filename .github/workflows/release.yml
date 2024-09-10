@@ -34,5 +34,6 @@ jobs:
       - name: Run jReleaser Full Release
         run: ./gradlew jreleaserFullRelease
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
