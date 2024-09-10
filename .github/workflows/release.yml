@@ -19,11 +19,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Downgrade to Gradle 7.6
+      - name: Upgrade to Gradle 8.2
         run: |
-          wget https://services.gradle.org/distributions/gradle-7.6-bin.zip
-          unzip gradle-7.6-bin.zip
-          echo "GRADLE_HOME=$(pwd)/gradle-7.6" >> $GITHUB_ENV
+          wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
+          unzip gradle-8.2-bin.zip
+          echo "GRADLE_HOME=$(pwd)/gradle-8.2" >> $GITHUB_ENV
           echo "PATH=$GRADLE_HOME/bin:$PATH" >> $GITHUB_ENV
 
       - name: Cache Gradle packages
