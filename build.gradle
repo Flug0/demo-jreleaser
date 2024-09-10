@@ -73,7 +73,7 @@ project(":core") {
 jreleaser {
     project {
         name = 'DEMO-JRELEASER'
-        version = '1.0.29'
+        version = '1.0.30'
         description = 'A demo to showcase JReleaser'
         authors = ['Hugo', 'Oscar']
         license = 'MIT'
@@ -95,6 +95,7 @@ jreleaser {
                 active = 'ALWAYS'
                 repoOwner = 'Flug0'
                 name = 'homebrew-jreleaser-demo'
+                token = System.getenv('GITHUB_TOKEN') // Environment variable
             }
             //formulaName = 'demo-jreleaser'
             //description = 'Game to showcase JReleaser'
