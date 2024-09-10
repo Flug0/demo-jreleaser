@@ -18,9 +18,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Check Gradle version
-        run: ./gradlew --version
         
       - name: Cache Gradle packages
         uses: actions/cache@v3
