@@ -12,7 +12,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jreleaser' version '1.14.0'
+    id 'org.jreleaser' version '1.7.0'
     id 'java'
 }
 
