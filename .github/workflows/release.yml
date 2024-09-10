@@ -19,6 +19,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Downgrade to Gradle 7.6
+        run: |
+          wget https://services.gradle.org/distributions/gradle-7.6-bin.zip
+          unzip gradle-7.6-bin.zip
+          echo "GRADLE_HOME=$(pwd)/gradle-7.6" >> $GITHUB_ENV
+          echo "PATH=$GRADLE_HOME/bin:$PATH" >> $GITHUB_ENV
+
       - name: Cache Gradle packages
         uses: actions/cache@v3
         with:
