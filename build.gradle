@@ -85,7 +85,6 @@ jreleaser {
             name = 'demo-jreleaser'
             token = System.getenv('GITHUB_TOKEN') // Environment variable
             overwrite = true
-            update = true
         }
     }
 
