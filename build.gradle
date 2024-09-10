@@ -1,6 +1,4 @@
 buildscript {
-    
-
     repositories {
         mavenLocal()
         mavenCentral()
@@ -9,9 +7,13 @@ buildscript {
         google()
     }
     dependencies {
-        
 
     }
+}
+
+plugins {
+    id 'org.jreleaser' version '1.7.0'
+    id 'java'
 }
 
 allprojects {
@@ -37,26 +39,51 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
         maven { url "https://jitpack.io" }
     }
+
+    // Set the Java compatibility versions globally
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
 }
 
 project(":desktop") {
     apply plugin: "java-library"
 
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
 
     dependencies {
         implementation project(":core")
         api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        
     }
 }
 
 project(":core") {
     apply plugin: "java-library"
 
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
 
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
-        
+    }
+}
+
+// JReleaser Configuration
+jreleaser {
+    project {
+        name = 'DEMO-JRELEASER'
+        version = '1.0.1'
+        description = 'A demo to showcase JReleaser'
+        authors = ['Hugo', 'Oscar']
+        license = 'MIT'
+    }
+
+    release {
+        github {
+            repoOwner = 'Flug0'
+            name = 'demo-jreleaser'
+            token = System.getenv('GITHUB_TOKEN') // Environment variable
+        }
     }
 }

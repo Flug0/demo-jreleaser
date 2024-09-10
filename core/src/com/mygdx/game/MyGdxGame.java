@@ -43,6 +43,7 @@ public class MyGdxGame extends ApplicationAdapter {
     private SpriteBatch batch;
     private OrthographicCamera camera;
     private Texture bgImage;
+    private Texture steveImage;
     private Rectangle steve;
     //private Circle stone;
     private final int steveAcc = -80;
@@ -118,7 +119,9 @@ public class MyGdxGame extends ApplicationAdapter {
         }
         fireball = new Fireball(WIDTH, 0);
         batch = new SpriteBatch();
-        bgImage = new Texture("background.jpg");
+        steveImage = new Texture("belle.png");
+        //bgImage = new Texture("background.jpg");
+        bgImage = new Texture("pink.jpg");
         bgImage.setWrap(Repeat, Repeat);
         camera = new OrthographicCamera();
         camera.setToOrtho(false, WIDTH, HEIGHT);
@@ -126,7 +129,6 @@ public class MyGdxGame extends ApplicationAdapter {
         font.setColor(Color.BLACK);
         fontclick = new BitmapFont();
         fontclick.setColor(Color.BLACK);
-        fontclick.getData().setScale(3);
         highscores = new ArrayList<>();
 
         mainMusic = Gdx.audio.newMusic(Gdx.files.internal("joyrideTheme.mp3"));
@@ -165,15 +167,13 @@ public class MyGdxGame extends ApplicationAdapter {
                     // position and size of texture
                     0, 0, WIDTH, HEIGHT);
             GlyphLayout glyphlayout = new GlyphLayout();
-            glyphlayout.setText(fontclick, "Play");
-            // Highlight text with white color when hovering it
-            if (Gdx.input.getX() > WIDTH / 2 - glyphlayout.width / 2 && Gdx.input.getX() < WIDTH / 2 + glyphlayout.width / 2 && Gdx.input.getY() < HEIGHT - HEIGHT / 4 && Gdx.input.getY() > HEIGHT - HEIGHT / 4 - glyphlayout.height) {
+            glyphlayout.setText(fontclick, "Press to play");
+            //if (Gdx.input.getX() > WIDTH / 2 - glyphlayout.width / 2 && Gdx.input.getX() < WIDTH / 2 + glyphlayout.width / 2 && Gdx.input.getY() < HEIGHT - HEIGHT / 4 && Gdx.input.getY() > HEIGHT - HEIGHT / 4 - glyphlayout.height) {
                 fontclick.setColor(Color.WHITE);
-                // Start game if text is pressed
-                if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+                if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
                     currentScreen = Screen.MAIN_GAME;
                     fontclick.setColor(Color.BLACK);
-                }
+              //  }
             } else {
                 fontclick.setColor(Color.BLACK);
             }
@@ -224,24 +224,23 @@ public class MyGdxGame extends ApplicationAdapter {
                     // position and size of texture
                     0, 0, WIDTH, HEIGHT);
             GlyphLayout restart = new GlyphLayout();
-            restart.setText(fontclick, "Restart");
+            restart.setText(fontclick, "Press space to restart");
             GlyphLayout score = new GlyphLayout();
             score.setText(font, Integer.toString(survivedFrames / 60));
             GlyphLayout scoretext = new GlyphLayout();
             scoretext.setText(font, "Score:");
-            if (Gdx.input.getX() > WIDTH / 2 - restart.width / 2 && Gdx.input.getX() < WIDTH / 2 + restart.width / 2 && Gdx.input.getY() < HEIGHT - HEIGHT / 4 && Gdx.input.getY() > HEIGHT - HEIGHT / 4 - restart.height) {
+            //if (Gdx.input.getX() > WIDTH / 2 - restart.width / 2 && Gdx.input.getX() < WIDTH / 2 + restart.width / 2 && Gdx.input.getY() < HEIGHT - HEIGHT / 4 && Gdx.input.getY() > HEIGHT - HEIGHT / 4 - restart.height) {
                 fontclick.setColor(Color.WHITE);
-                if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+                if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
                     currentScreen = Screen.MAIN_GAME;
                     endScreenMusic.stop();
                     survivedFrames = 0;
                     fontclick.setColor(Color.BLACK);
-                }
+               // }
             } else {
                 fontclick.setColor(Color.BLACK);
             }
 
-            // Display highscores
             GlyphLayout highscorestext = new GlyphLayout();
             highscorestext.setText(font, "Highscores:");
             font.draw(batch, highscorestext, WIDTH / 2 - highscorestext.width / 2, HEIGHT / 4 + 420);
@@ -284,6 +283,8 @@ public class MyGdxGame extends ApplicationAdapter {
             handleFireball();
         }
 
+        batch.draw(steveImage, steve.x, steve.y, steve.width, steve.height);
+        /*
         if (steve.y > FLOOR_Y && steve_y_speed >= 0) {
             // Steve moving upwards
             batch.draw(jump, steve.x, steve.y, steve.width, steve.height);
@@ -291,6 +292,7 @@ public class MyGdxGame extends ApplicationAdapter {
             // Steve is either running or falling
             batch.draw(currentSteveAnimationState.getKeyFrame(elapsedTime), steve.x, steve.y, steve.width, steve.height);
         }
+        */
         font.draw(batch, Integer.toString(survivedFrames / 60), WIDTH - 70, HEIGHT - 20);
         batch.end(); // Frame finished
     }
@@ -402,7 +404,7 @@ public class MyGdxGame extends ApplicationAdapter {
         backgroundSpeed = 6;
         fireball.reposition(WIDTH * 2,
                 rand.nextInt(HEIGHT - fireball.HEIGHT - MIN_Y_VALUE) + MIN_Y_VALUE);
-        // Randomly arrange all crates, coins and potions to the right of the screen
+        // Randomly arrange all crates to the right of the screen
         for (int j = 0; j < crates.size; j++) {
             crates.get(j).reposition((j + 1) * (rand.nextInt(CRATE_FLUCTUATION) + CRATE_MINIMUM_GAP) + WIDTH);
         }
@@ -412,8 +414,6 @@ public class MyGdxGame extends ApplicationAdapter {
         for (int i = 0; i < POTION_COUNT; i++) {
             potions.get(i).reposition((i + 1) * (rand.nextInt(POTION_FLUCTUATION) + POTION_MINIMUM_GAP) + WIDTH);
         }
-
-        // If score is top 10 of the play session add it to the high scores and sort the list
         if (highscores.size() < 10) {
             highscores.add(survivedFrames / 60);
             Collections.sort(highscores, Collections.<Integer>reverseOrder());
