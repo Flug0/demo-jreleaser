@@ -90,8 +90,9 @@ jreleaser {
 
     packagers {
         brew {
-            active = 'release'
+            active = 'ALWAYS'
             repository {
+                active = 'ALWAYS'
                 repoOwner = 'Flug0'
                 name = 'homebrew-jreleaser-demo'
             }
