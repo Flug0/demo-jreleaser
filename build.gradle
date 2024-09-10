@@ -73,7 +73,7 @@ project(":core") {
 jreleaser {
     project {
         name = 'DEMO-JRELEASER'
-        version = '1.0.25'
+        version = '1.0.27'
         description = 'A demo to showcase JReleaser'
         authors = ['Hugo', 'Oscar']
         license = 'MIT'
@@ -84,6 +84,19 @@ jreleaser {
             repoOwner = 'Flug0'
             name = 'demo-jreleaser'
             token = System.getenv('GITHUB_TOKEN') // Environment variable
+        }
+    }
+
+    packagers {
+        brew {
+            active = 'release'
+            repository {
+                repoOwner = 'Flug0'
+                name = 'homebrew-jreleaser-demo'
+            }
+            //formulaName = 'demo-jreleaser'
+            //description = 'Game to showcase JReleaser'
+            //homepage = 'https://github.com/Flug0/demo-jreleaser'
         }
     }
 }
