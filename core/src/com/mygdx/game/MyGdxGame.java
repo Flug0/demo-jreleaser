@@ -120,8 +120,8 @@ public class MyGdxGame extends ApplicationAdapter {
         fireball = new Fireball(WIDTH, 0);
         batch = new SpriteBatch();
         steveImage = new Texture("belle.png");
-        //bgImage = new Texture("background.jpg");
-        bgImage = new Texture("pink.jpg");
+        bgImage = new Texture("background.jpg");
+        //bgImage = new Texture("pink.jpg");
         bgImage.setWrap(Repeat, Repeat);
         camera = new OrthographicCamera();
         camera.setToOrtho(false, WIDTH, HEIGHT);
@@ -283,8 +283,8 @@ public class MyGdxGame extends ApplicationAdapter {
             handleFireball();
         }
 
-        batch.draw(steveImage, steve.x, steve.y, steve.width, steve.height);
-        /*
+       // batch.draw(steveImage, steve.x, steve.y, steve.width, steve.height);
+
         if (steve.y > FLOOR_Y && steve_y_speed >= 0) {
             // Steve moving upwards
             batch.draw(jump, steve.x, steve.y, steve.width, steve.height);
@@ -292,7 +292,7 @@ public class MyGdxGame extends ApplicationAdapter {
             // Steve is either running or falling
             batch.draw(currentSteveAnimationState.getKeyFrame(elapsedTime), steve.x, steve.y, steve.width, steve.height);
         }
-        */
+
         font.draw(batch, Integer.toString(survivedFrames / 60), WIDTH - 70, HEIGHT - 20);
         batch.end(); // Frame finished
     }
