@@ -104,7 +104,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
     /**
      * Initialize the game by spawning all objects
-     * and assigning asset
+     * and assigning assets
      */
     @Override
     public void create() {
