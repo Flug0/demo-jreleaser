@@ -97,8 +97,8 @@ public class MyGdxGame extends ApplicationAdapter {
     Animation<TextureRegion> runAnimation;
     Animation<TextureRegion> fallAnimation;
     Animation<TextureRegion> chara;
-    private String character = "normal"; //belle
-    private String background = "normal"; //pink
+    private String character = "belle"; //belle
+    private String background = "pink"; //pink
 
     private ArrayList<Integer> highscores;
 
